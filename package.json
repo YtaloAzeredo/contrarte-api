@@ -1,0 +1,19 @@
+{
+  "name": "contrarte-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/YtaloAzeredo/contrarte-api.git",
+  "author": "ytalo azeredo <ytaloazeredo@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules src/server.ts"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
