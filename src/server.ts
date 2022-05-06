@@ -1,10 +1,19 @@
 import express from 'express'
-import '@controllers/UsersController';
+import '@controllers/UsersController'
 
-const app = express();
+const app = express()
+const PORT = process.env.PORT
 
 app.get('/', (request, response) => {
-  return response.json({ message: 'Hello World'})
+  return response.json({ message: 'Hello World' })
 })
 
-app.listen(3333)
+startApp()
+
+function startApp () {
+  app.listen(PORT, onListen)
+}
+
+function onListen () {
+  console.log(`============ Server Started on http://localhost:${PORT} ============`)
+}
