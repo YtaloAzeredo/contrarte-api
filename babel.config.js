@@ -16,7 +16,8 @@ module.exports = {
         '@models': './src/models',
         '@controllers': './src/controllers',
         '@views': './src/views',
-        '@config': './src/config'
+        '@config': './src/config',
+        '@dotenv': './src/lib/dotenv'
       }
     }]
   ],

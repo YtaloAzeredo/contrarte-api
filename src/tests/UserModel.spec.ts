@@ -3,7 +3,7 @@ import { User } from '@models/User'
 test('oi', () => {
   const user = new User()
 
-  user.name = 'yto'
+  user.name = 'yto test'
 
-  expect(user.name).toEqual('yto')
+  expect(user.name).toEqual(process.env.NAME)
 })

@@ -22,7 +22,8 @@
       "@controllers/*": ["./src/controllers/*"],
       "@models/*": ["./src/models/*"],
       "@views/*": ["./src/views/*"],
-      "@config/*": ["./src/config/*"]
+      "@config/*": ["./src/config/*"],
+      "@dotenv": ["./src/lib/dotenv.ts"]
     }
   },
   "include": [
