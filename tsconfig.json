@@ -21,9 +21,8 @@
     "paths": {
       "@controllers/*": ["./src/controllers/*"],
       "@models/*": ["./src/models/*"],
-      "@views/*": ["./src/views/*"],
-      "@config/*": ["./src/config/*"],
-      "@dotenv": ["./src/lib/dotenv.ts"]
+      "@routes/*": ["./src/routes/*"],
+      "@configs/*": ["./src/configs/*"]
     }
   },
   "include": [

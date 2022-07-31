@@ -1,18 +1,17 @@
 import express from 'express'
-import '@controllers/UsersController'
-import '@dotenv'
+import './bootstrap'
+import './database'
+import { routes } from './routes'
 
 const app = express()
-const PORT = process.env.PORT
-
-app.get('/', (request, response) => {
-  return response.json({ message: 'Hello World' })
-})
+const port = process.env.SERVER_PORT
 
 startApp()
 
 function startApp () {
-  app.listen(PORT, () => {
-    console.log(`============ Server Started on http://localhost:${PORT} ============`)
+  app.use(express.json())
+  routes.map(route => app.use(route))
+  app.listen(port, () => {
+    console.log(`============ Server Running on port:${port} ============`)
   })
 }
