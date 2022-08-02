@@ -3,12 +3,15 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn
 } from 'typeorm'
+import { Addresses } from './Addresses'
+import { PostComments } from './PostComments'
 
 @Entity()
-export class User extends BaseEntity {
+export class Users extends BaseEntity {
   @PrimaryGeneratedColumn()
     id: number
 
@@ -21,8 +24,11 @@ export class User extends BaseEntity {
   @Column({ nullable: false })
     password: string
 
-  @Column({ nullable: true })
-    address_id: number
+  @OneToMany(() => Addresses, (address) => address.user)
+    addresses: Addresses[]
+
+  @OneToMany(() => PostComments, (comment) => comment.user)
+    comments: PostComments[]
 
   @CreateDateColumn()
     createdAt: Date
