@@ -1,13 +1,24 @@
-import { BaseEntity, Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm'
-import { Posts } from './Posts'
+import {
+  BaseEntity,
+  Column,
+  CreateDateColumn,
+  Entity,
+  OneToMany,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn
+} from 'typeorm'
+import { PostImages } from './PostImages'
 
 @Entity()
 export class Images extends BaseEntity {
   @PrimaryGeneratedColumn()
     id: number
 
-  @ManyToOne(() => Posts, (post) => post.images)
-    post: Posts
+  @Column()
+    url: string
+
+  @OneToMany(() => PostImages, (post) => post.image)
+    post: PostImages[]
 
   @CreateDateColumn()
     createdAt: Date

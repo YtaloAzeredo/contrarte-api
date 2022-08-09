@@ -3,12 +3,17 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
   OneToMany,
+  OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn
 } from 'typeorm'
 import { Addresses } from './Addresses'
-import { PostComments } from './PostComments'
+import { Images } from './Images'
+import { Comments } from './Comments'
+import { PostLikes } from './PostLikes'
+import { Posts } from './Posts'
 
 @Entity()
 export class Users extends BaseEntity {
@@ -27,8 +32,18 @@ export class Users extends BaseEntity {
   @OneToMany(() => Addresses, (address) => address.user)
     addresses: Addresses[]
 
-  @OneToMany(() => PostComments, (comment) => comment.user)
-    comments: PostComments[]
+  @OneToMany(() => Comments, (comment) => comment.user)
+    comments: Comments[]
+
+  @OneToMany(() => PostLikes, (like) => like.user)
+    likes: PostLikes[]
+
+  @OneToMany(() => Posts, (post) => post.user)
+    posts: Posts[]
+
+  @OneToOne(() => Images)
+  @JoinColumn()
+    profilePicture: Images
 
   @CreateDateColumn()
     createdAt: Date
