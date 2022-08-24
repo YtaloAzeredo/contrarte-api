@@ -1,4 +1,4 @@
-import { Users } from '@models/Users'
+import { Users } from '@models/users.repository'
 import { Request, Response } from 'express'
 
 class UsersController {

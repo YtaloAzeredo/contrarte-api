@@ -3,28 +3,22 @@ import {
   Column,
   CreateDateColumn,
   Entity,
-  ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn
 } from 'typeorm'
-import { Users } from './Users'
+import { PostImages } from './post-images.repository'
 
 @Entity()
-export class Addresses extends BaseEntity {
+export class Images extends BaseEntity {
   @PrimaryGeneratedColumn()
     id: number
 
   @Column()
-    street: string
+    url: string
 
-  @Column()
-    city: string
-
-  @Column()
-    zipCode: string
-
-  @ManyToOne(() => Users, (user) => user.addresses)
-    user: Users
+  @OneToMany(() => PostImages, (post) => post.image)
+    post: PostImages[]
 
   @CreateDateColumn()
     createdAt: Date

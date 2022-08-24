@@ -6,18 +6,18 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn
 } from 'typeorm'
-import { Images } from './Images'
-import { Posts } from './Posts'
+import { Comments } from './comments.repository'
+import { Posts } from './posts.repository'
 
 @Entity()
-export class PostImages extends BaseEntity {
+export class PostComments extends BaseEntity {
   @PrimaryGeneratedColumn()
     id: number
 
-  @ManyToOne(() => Images, (image) => image.post)
-    image: Images
+  @ManyToOne(() => Comments, (comment) => comment.post)
+    comment: Comments
 
-  @ManyToOne(() => Posts, (post) => post.images)
+  @ManyToOne(() => Posts, (post) => post.comments)
     post: Posts
 
   @CreateDateColumn()

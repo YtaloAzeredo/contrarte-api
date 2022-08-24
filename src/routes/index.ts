@@ -1,5 +1,5 @@
-import userRouter from './userRouter'
+import usersRoutes from './users.routes'
 
 export const routes = [
-  userRouter
+  usersRoutes
 ]
