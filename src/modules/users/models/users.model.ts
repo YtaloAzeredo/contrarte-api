@@ -9,11 +9,11 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn
 } from 'typeorm'
-import { Addresses } from './addresses.model'
-import { Images } from './images.model'
-import { Comments } from './comments.model'
-import { PostLikes } from './post-likes.model'
-import { Posts } from './posts.model'
+import { Addresses } from '../../addresses/models/addresses.model'
+import { Images } from '../../../models/images.model'
+import { Comments } from '../../../models/comments.model'
+import { PostLikes } from '../../../models/post-likes.model'
+import { Posts } from '../../../models/posts.model'
 
 @Entity()
 export class Users extends BaseEntity {
