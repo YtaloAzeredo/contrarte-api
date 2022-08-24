@@ -6,8 +6,8 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn
 } from 'typeorm'
-import { Posts } from './posts.repository'
-import { Users } from './users.repository'
+import { Posts } from './posts.model'
+import { Users } from './users.model'
 
 @Entity()
 export class PostLikes extends BaseEntity {

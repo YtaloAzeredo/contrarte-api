@@ -8,8 +8,8 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn
 } from 'typeorm'
-import { PostComments } from './post-comments.repository'
-import { Users } from './users.repository'
+import { PostComments } from './post-comments.model'
+import { Users } from './users.model'
 
 @Entity()
 export class Comments extends BaseEntity {

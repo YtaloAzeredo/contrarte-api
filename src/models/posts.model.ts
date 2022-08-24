@@ -8,10 +8,10 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn
 } from 'typeorm'
-import { PostComments } from './post-comments.repository'
-import { PostLikes } from './post-likes.repository'
-import { Users } from './users.repository'
-import { PostImages } from './post-images.repository'
+import { PostComments } from './post-comments.model'
+import { PostLikes } from './post-likes.model'
+import { Users } from './users.model'
+import { PostImages } from './post-images.model'
 
 @Entity()
 export class Posts extends BaseEntity {

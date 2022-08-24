@@ -7,7 +7,7 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn
 } from 'typeorm'
-import { PostImages } from './post-images.repository'
+import { PostImages } from './post-images.model'
 
 @Entity()
 export class Images extends BaseEntity {
