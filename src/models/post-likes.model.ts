@@ -7,7 +7,7 @@ import {
   UpdateDateColumn
 } from 'typeorm'
 import { Posts } from './posts.model'
-import { Users } from './users.model'
+import { Users } from '../modules/users/models/users.model'
 
 @Entity()
 export class PostLikes extends BaseEntity {

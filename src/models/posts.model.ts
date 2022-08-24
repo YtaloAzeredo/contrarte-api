@@ -10,7 +10,7 @@ import {
 } from 'typeorm'
 import { PostComments } from './post-comments.model'
 import { PostLikes } from './post-likes.model'
-import { Users } from './users.model'
+import { Users } from '../modules/users/models/users.model'
 import { PostImages } from './post-images.model'
 
 @Entity()
