@@ -8,7 +8,7 @@ export const config: DataSourceOptions = {
   password: process.env.DB_PASS,
   database: process.env.DB_NAME,
 
-  entities: ['src/models/*'],
+  entities: ['src/**/*.model.ts'],
   migrations: ['src/database/migrations/*'],
 
   logging: false,
