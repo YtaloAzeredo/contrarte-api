@@ -13,11 +13,15 @@ module.exports = {
   plugins: [
     ['module-resolver', {
       alias: {
-        '@models': './src/models',
         '@controllers': './src/controllers',
-        '@views': './src/views',
-        '@config': './src/config',
-        '@dotenv': './src/lib/dotenv'
+        '@models': './src/models',
+        '@routes': './src/routes',
+        '@configs': './src/configs',
+        '@errors': './src/errors',
+        '@repositories': './src/repositories',
+        '@types': './src/types',
+        '@modules': './src/modules',
+        '@interfaces': './src/interfaces'
       }
     }]
   ],

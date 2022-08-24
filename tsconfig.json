@@ -1,28 +1,33 @@
 {
-  "compilerOptions": {  
-    "target": "es2017",                                  
+  "compilerOptions": {
+    "target": "es2017",
     "lib": ["es6"],
-    "experimentalDecorators": true,                   
-    "emitDecoratorMetadata": true,  
-    "module": "commonjs",                                
-    "rootDir": "./src",     
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "module": "commonjs",
+    "rootDir": "./src",
     "typeRoots": [
       "./node_modules/@types",
-      "./src/@types"
-    ],        
-    "resolveJsonModule": true,     
-    "allowJs": true,          
-    "outDir": "./dist",                                   
-    "removeComments": true,       
-    "esModuleInterop": true,    
-    "forceConsistentCasingInFileNames": true,      
+      "./src/types"
+    ],
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "outDir": "./dist",
+    "removeComments": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
       "@controllers/*": ["./src/controllers/*"],
       "@models/*": ["./src/models/*"],
       "@routes/*": ["./src/routes/*"],
-      "@configs/*": ["./src/configs/*"]
+      "@configs/*": ["./src/configs/*"],
+      "@errors/*": ["./src/errors/*"],
+      "@repositories/*": ["./src/repositories/*"],
+      "@types/*": ["./src/types/*"],
+      "@modules/*": ["./src/modules/*"],
+      "@interfaces/*": ["./src/interfaces/*"]
     }
   },
   "include": [
