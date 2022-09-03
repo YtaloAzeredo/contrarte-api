@@ -7,7 +7,7 @@ import {
   UpdateDateColumn
 } from 'typeorm'
 import { Images } from './images.model'
-import { Posts } from './posts.model'
+import { Posts } from '../modules/posts/models/posts.model'
 
 @Entity()
 export class PostImages extends BaseEntity {

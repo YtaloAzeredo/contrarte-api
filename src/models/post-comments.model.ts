@@ -7,7 +7,7 @@ import {
   UpdateDateColumn
 } from 'typeorm'
 import { Comments } from './comments.model'
-import { Posts } from './posts.model'
+import { Posts } from '../modules/posts/models/posts.model'
 
 @Entity()
 export class PostComments extends BaseEntity {

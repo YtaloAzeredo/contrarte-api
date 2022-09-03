@@ -6,7 +6,7 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn
 } from 'typeorm'
-import { Posts } from './posts.model'
+import { Posts } from '../modules/posts/models/posts.model'
 import { Users } from '../modules/users/models/users.model'
 
 @Entity()
