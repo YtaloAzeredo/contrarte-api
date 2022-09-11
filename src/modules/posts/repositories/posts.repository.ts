@@ -1,5 +1,5 @@
 import { Abstract } from '@repositories/abstract.repository'
-import { IPostsRepository } from './posts-repository.interface'
+import { IPostsQuery, IPostsRepository } from './posts-repository.interface'
 import { Posts } from '../models/posts.model'
 
 export class PostsRepository extends Abstract implements IPostsRepository {
@@ -7,8 +7,14 @@ export class PostsRepository extends Abstract implements IPostsRepository {
     super('Post')
   }
 
-  async getAll (): Promise<Posts[]> {
-    const response = await Posts.find()
+  async getAll (query: IPostsQuery): Promise<Posts[]> {
+    const response = await Posts.find({
+      where: {
+        user: {
+          id: query.user
+        }
+      }
+    })
     return response
   }
 
