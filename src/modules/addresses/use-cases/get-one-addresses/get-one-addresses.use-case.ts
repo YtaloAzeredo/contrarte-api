@@ -1,6 +1,7 @@
 import { IUseCase } from '@interfaces/use-case.interface'
 import { IAddressesRepository } from '@modules/addresses/repositories/addresses-repository.interface'
 import { Addresses } from '@modules/addresses/models/addresses.model'
+import NotFoundError from '@errors/not-found.error'
 
 export class GetOneAddressesUseCase implements IUseCase {
   constructor (
@@ -8,6 +9,8 @@ export class GetOneAddressesUseCase implements IUseCase {
   ) {}
 
   async execute (id: number): Promise<Addresses> {
-    return this.addressesRepository.getOne({ id, throws: true })
+    const address = await this.addressesRepository.getOne({ id })
+    if (!address) throw new NotFoundError(this.addressesRepository.getNotFoundError())
+    return address
   }
 }

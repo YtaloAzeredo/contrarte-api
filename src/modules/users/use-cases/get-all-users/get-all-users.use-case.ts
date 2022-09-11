@@ -8,7 +8,7 @@ export class GetAllUsersUseCase implements IUseCase {
 
   async execute (): Promise<Users[]> {
     const users = await this.usersRepository.getAll()
-    if (!users) throw new NotFoundError(this.usersRepository.getNotFoundError())
+    if (!users.length) throw new NotFoundError(this.usersRepository.getNotFoundError())
     return users
   }
 }

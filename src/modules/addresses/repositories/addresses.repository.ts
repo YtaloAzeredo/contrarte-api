@@ -1,5 +1,4 @@
 import { Addresses } from '@modules/addresses/models/addresses.model'
-import NotFoundError from '@errors/not-found.error'
 import { Abstract } from '@repositories/abstract.repository'
 import { IAddressesRepository } from './addresses-repository.interface'
 
@@ -8,15 +7,13 @@ export class AddressesRepository extends Abstract implements IAddressesRepositor
     super('Address')
   }
 
-  async getAll ({ throws }: { throws?: boolean } = {}): Promise<Addresses[]> {
+  async getAll (): Promise<Addresses[]> {
     const response = await Addresses.find()
-    if (!response.length && throws) throw new NotFoundError(this.getNotFoundError())
     return response
   }
 
-  async getOne ({ id, throws }: { id?: number, throws?: boolean }): Promise<Addresses> {
+  async getOne ({ id }: { id?: number }): Promise<Addresses> {
     const response = await Addresses.findOneBy({ id }) as Addresses
-    if (!response && throws) throw new NotFoundError(this.getNotFoundError())
     return response
   }
 
